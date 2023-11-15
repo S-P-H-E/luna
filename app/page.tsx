@@ -1,4 +1,3 @@
-import Chat from "./components/Chat/page";
 import { BiLoader } from 'react-icons/bi';
 
 export default function Home(){

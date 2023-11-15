@@ -7,7 +7,6 @@ import { FaRegStopCircle } from "react-icons/fa";
 import { HiOutlineRefresh } from "react-icons/hi";
 import { RiMenuFill } from "react-icons/ri";
 import Weather from '../Weather/page';
-import Menu from './Menu/page';
 import { UserButton, currentUser } from '@clerk/nextjs';
 
 export default function ChatPage() {
