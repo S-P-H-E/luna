@@ -4,6 +4,7 @@
 
 body {
   /* background-image: linear-gradient(to right, #8CCBFD,  #A3A0FC, #EFB2FA); */
+  color: white;
   background-color: #161618;
 }
 
@@ -29,4 +30,3 @@ body {
     background: transparent;
     height: 5px;
   }
-  

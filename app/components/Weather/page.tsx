@@ -60,19 +60,23 @@ export default function Weather(){
           } else if (cloudPercentage >= 90 && cloudPercentage <= 100) {
             setCloudDescription("Overcast");
           } else {
-            setCloudDescription("Unknown");
+            setCloudDescription("Clear");
+            console.log(response)
           }
         })
         .catch(error => {
           console.error(error);
         });
+        
     }
   }, [latitude, longitude]);
+
+  
 
     return(
         <>
             {weatherData ? (
-                <div className=" py-7 px-10 flex items-center gap-3 text-white fixed">
+                <div className="py-7 px-10 flex items-center gap-3 text-white">
                     <Image src={`/Images/${cloudDescription}.svg`} alt='Luna' width={50} height={0} className="md:w-[3vw]"/>
                     <h1 className="text-4xl font-semibold">{weatherData.current.feelslike_c}<sup>°</sup></h1>
                     <div>
@@ -81,7 +85,7 @@ export default function Weather(){
                     </div>
                 </div>
                 ) : (
-                <div className="border-b border-[#E9EEF9] py-7 px-10 flex items-center gap-3 text-[#09324D]">
+                <div className="py-7 px-10 flex items-center gap-3 text-[#09324D]">
                     <div className="bg-[#e0e0e0] rounded-full animate-pulse h-[50px] aspect-square"/>
                     <div className="flex flex-col gap-2">
                     <div className="bg-[#e0e0e0] rounded-full animate-pulse h-[10px] w-[60px]"/>
