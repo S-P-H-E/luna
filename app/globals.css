@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* background-image: linear-gradient(to right, #8CCBFD,  #A3A0FC, #EFB2FA); */
+  background-color: #161618;
 }
+
+/* Style for the scrollbar */
+.customScroll {
+    padding-right: 10px;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(155, 155, 155, 0.7) rgba(0, 0, 0, 0.5); /* Also for Firefox */
+}
+  
+  /* Styles for Webkit browsers like Chrome, Safari, and Opera */
+  .customScroll::-webkit-scrollbar {
+    width: 10px; /* width of the entire scrollbar */
+  }
+  
+  .customScroll::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #AAAAAA;
+  }
+  
+  /* Optional: Style for the scrollbar buttons (up and down arrows) */
+  .customScroll::-webkit-scrollbar-button {
+    background: transparent;
+    height: 5px;
+  }
+  
