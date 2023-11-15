@@ -16,12 +16,16 @@ export default function Home() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
+  const handleReload = (event: React.MouseEvent<HTMLButtonElement>) => {
+    reload
+  };
+
   return (
     <>
       <div className="h-[100dvh] flex flex-col w-[80vw] mx-auto text-white p-10">
         <div className="flex flex-col gap-10 max-h-[50vh]"  ref={messagesEndRef}>
           {messages.map(m => (
-            <div className="flex gap-3">
+            <div className="flex gap-3" key={m.id}>
               <div className="w-fit">
                 <Image src={m.role === "user" ? "/Images/user.png" : "/Images/luna.png"} alt='profile' width={30} height={0}/>
               </div>
@@ -45,7 +49,7 @@ export default function Home() {
               ):null}
 
               {!isLoading && (
-                <button className="text-[#5F5D65] shadow p-2 rounded-md bg-[#202022]" onClick={reload}>
+                <button className="text-[#5F5D65] shadow p-2 rounded-md bg-[#202022]" onClick={handleReload}>
                   <HiOutlineRefresh size={20}/>
                 </button>
               )}

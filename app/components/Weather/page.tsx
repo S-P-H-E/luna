@@ -3,10 +3,20 @@ import Image from "next/image";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+type WeatherData = {
+  current: {
+    cloud: number;
+    feelslike_c: number;
+  };
+  location: {
+    localtime_epoch: number;
+  };
+};
+
 export default function Weather(){
-    const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
-  const [weatherData, setWeatherData] = useState(null);
+  const [latitude, setLatitude] = useState<string | null>(null);
+  const [longitude, setLongitude] = useState<string | null>(null);
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [cloudDescription, setCloudDescription] = useState("");
 
   useEffect(() => {
