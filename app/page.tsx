@@ -22,7 +22,16 @@ export default function Home() {
 
   return (
     <>
+      <div>
+        <Weather />
+      </div>
       <div className="h-[100dvh] flex flex-col w-[80vw] mx-auto text-white p-10">
+        {messages.length === 0 && (
+          <div className='flex flex-col gap-6 items-center justify-center w-full h-full'>
+            <Image src='/Images/luna.png' alt='Luna' width={40} height={0}/>
+            <h1 className='text-4xl font-semibold text-[#5C5A62]'>How can I help you?</h1>
+          </div>
+        )}
         <div className="flex flex-col gap-10 max-h-[50vh]"  ref={messagesEndRef}>
           {messages.map(m => (
             <div className="flex gap-3" key={m.id}>
@@ -56,9 +65,9 @@ export default function Home() {
             </div>
             <div className='flex gap-3 w-full'>
               <div>
-                <Image src='/Images/user.png' alt='Luna' width={30} height={0}/>
+                <Image src='/Images/user.png' alt='user' width={30} height={0}/>
               </div>
-              <input placeholder="Ask anything..." className="bg-transparent placeholder:text-[#9F9FA5] outline-none w-full" value={input} onChange={handleInputChange} disabled={isLoading}/>
+              <input placeholder="Message Luna..." className="bg-transparent placeholder:text-[#9F9FA5] outline-none w-full" value={input} onChange={handleInputChange} disabled={isLoading}/>
             </div>
           </div>
         </form>

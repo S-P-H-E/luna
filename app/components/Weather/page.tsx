@@ -40,7 +40,7 @@ export default function Weather(){
           q: `${latitude},${longitude}`
         },
         headers: {
-          'X-RapidAPI-Key': '5bfba08a28msh8e644956c9503c5p1eafc6jsnac429ee7861f',
+          'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_API_KEY,
           'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
         }
       };
@@ -72,7 +72,7 @@ export default function Weather(){
     return(
         <>
             {weatherData ? (
-                <div className="border-b border-[#E9EEF9] py-7 px-10 flex items-center gap-3 text-[#09324D]">
+                <div className=" py-7 px-10 flex items-center gap-3 text-white fixed">
                     <Image src={`/Images/${cloudDescription}.svg`} alt='Luna' width={50} height={0} className="md:w-[3vw]"/>
                     <h1 className="text-4xl font-semibold">{weatherData.current.feelslike_c}<sup>°</sup></h1>
                     <div>
